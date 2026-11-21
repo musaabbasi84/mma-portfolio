@@ -54,7 +54,7 @@ function Lightbox({p,i,setI}){const n=p.shots.length;
 
 function Project({p,idx}){const [open,setOpen]=useState(null);const s=p.shots;
   const meta=<Reveal className="pmeta"><p className="kind">{p.kind}</p><h3>{p.name}</h3><p>{p.desc}</p><ul>{p.pts.map(t=><li key={t}>{t}</li>)}</ul>{p.note&&<p className="note">{p.note}</p>}
-    <ul className="tags" aria-label="Technologies">{p.tech.map(t=><li key={t}>{t}</li>)}</ul>{p.live&&<a className="link" href={p.live} target="_blank" rel="noopener noreferrer">Visit live site</a>}</Reveal>;
+    <ul className="tags" aria-label="Technologies">{p.tech.map(t=><li key={t}>{t}</li>)}</ul></Reveal>;
   let art;
   if(p.mobile)art=<div className="phones">{s.slice(0,6).map((x,i)=><ClipImg key={x} src={x} alt={p.alt[i]} className={'ph ph'+i} onClick={()=>setOpen(i)}/>)}</div>;
   else if(p.id==='wirefizz')art=<div className="stack"><ClipImg src={s[0]} alt={p.alt[0]} className="big" onClick={()=>setOpen(0)}/><ClipImg src={s[1]} alt={p.alt[1]} className="over o1" onClick={()=>setOpen(1)}/><ClipImg src={s[2]} alt={p.alt[2]} className="over o2" onClick={()=>setOpen(2)}/></div>;
